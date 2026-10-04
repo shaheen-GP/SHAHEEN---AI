@@ -1,34 +1,58 @@
-# SHAHEEN AI — Brand Identity
+# SHAHEEN AI
 
-## Product
+SHAHEEN AI is a customized, self-hosted AI platform derived from Open WebUI.
 
-SHAHEEN AI
+## Product identity
 
-## Environment Namespace
+- Product: SHAHEEN AI
+- Environment namespace: SHAHEEN_AI
+- Primary domain: https://shaheen-group.mooo.com
+- Repository: https://github.com/shaheen-GP/SHAHEEN---AI.git
+- Developer repository: https://github.com/Y-Shaheen94/Ys-Shaheen-.git
 
-SHAHEEN_AI
+## Upstream
 
-## Primary Logo
+This project is derived from Open WebUI.
 
-The official SHAHEEN AI logo is stored at:
+The upstream copyright, license, attribution, and required Open WebUI
+branding are retained according to the applicable upstream license.
+
+This project is not affiliated with or endorsed by the Open WebUI project.
+
+## SHAHEEN assets
+
+Primary logo:
 
 `branding/shaheen-ai.png`
 
-## Visual Identity
+## Configuration model
 
-SHAHEEN AI uses a dark, minimal, futuristic visual identity based on the official
-black-and-white SHAHEEN AI mark.
+SHAHEEN-specific configuration uses the `SHAHEEN_AI_` namespace where
+possible.
 
-## Developer Repository
+Upstream-compatible variables such as `WEBUI_NAME`, `WEBUI_URL`,
+and related variables remain supported because they are part of the
+underlying Open WebUI runtime.
 
-https://github.com/Y-Shaheen94/Ys-Shaheen-.git
+## Security
 
-This repository is the main developer repository where SHAHEEN AI and future
-projects will be published.
+Secrets must never be committed to Git.
 
-## Project Foundation
+Use:
 
-SHAHEEN AI is built on top of Open WebUI.
+- .env
+- Docker secrets
+- external secret management
+- deployment environment variables
 
-The upstream project is retained as the technical foundation while the user-facing
-product identity is SHAHEEN AI.
+Do not place API keys, OAuth secrets, JWT secrets, passwords, or private
+certificates inside tracked source files.
+
+## Build identity
+
+Builds should expose:
+
+SHAHEEN AI
+
+while preserving the upstream technical package identifiers required by
+the application.

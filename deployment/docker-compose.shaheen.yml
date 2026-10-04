@@ -1,34 +1,50 @@
 services:
-  open-webui:
-    image: ghcr.io/open-webui/open-webui:main
-    container_name: open-webui
+  shaheen-ai:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: shaheen-ai:local
+    container_name: shaheen-ai
     restart: unless-stopped
+
     ports:
       - "127.0.0.1:3000:8080"
+
     env_file:
       - ../.env
+
     environment:
-      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
-      - WEBUI_URL=${WEBUI_URL}
-      - WEBUI_NAME=${WEBUI_NAME}
-      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
-      - ENV=${ENV}
-      - ENABLE_WEB_SEARCH=${ENABLE_WEB_SEARCH}
-      - WEB_SEARCH_ENGINE=${WEB_SEARCH_ENGINE}
-      - WEB_SEARCH_RESULT_COUNT=${WEB_SEARCH_RESULT_COUNT}
-      - WEB_SEARCH_CONCURRENT_REQUESTS=${WEB_SEARCH_CONCURRENT_REQUESTS}
-      - ENABLE_API_KEYS=${ENABLE_API_KEYS}
-      - CORS_ALLOW_ORIGIN=${CORS_ALLOW_ORIGIN}
-      - WEBUI_SESSION_COOKIE_SECURE=${WEBUI_SESSION_COOKIE_SECURE}
-      - WEBUI_AUTH_COOKIE_SECURE=${WEBUI_AUTH_COOKIE_SECURE}
-      - WEBUI_SESSION_COOKIE_SAME_SITE=${WEBUI_SESSION_COOKIE_SAME_SITE}
-      - WEBUI_AUTH_COOKIE_SAME_SITE=${WEBUI_AUTH_COOKIE_SAME_SITE}
-      - EXTERNAL_PWA_MANIFEST_URL=${EXTERNAL_PWA_MANIFEST_URL}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-}
+      WEBUI_URL: ${WEBUI_URL:-https://shaheen-group.mooo.com}
+      WEBUI_NAME: ${WEBUI_NAME:-SHAHEEN AI}
+      WEBUI_SECRET_KEY: ${WEBUI_SECRET_KEY:-}
+      ENV: ${ENV:-prod}
+
+      ENABLE_WEB_SEARCH: ${ENABLE_WEB_SEARCH:-false}
+      WEB_SEARCH_ENGINE: ${WEB_SEARCH_ENGINE:-}
+      WEB_SEARCH_RESULT_COUNT: ${WEB_SEARCH_RESULT_COUNT:-}
+      WEB_SEARCH_CONCURRENT_REQUESTS: ${WEB_SEARCH_CONCURRENT_REQUESTS:-}
+
+      ENABLE_API_KEYS: ${ENABLE_API_KEYS:-true}
+      CORS_ALLOW_ORIGIN: ${CORS_ALLOW_ORIGIN:-https://shaheen-group.mooo.com}
+
+      WEBUI_SESSION_COOKIE_SECURE: ${WEBUI_SESSION_COOKIE_SECURE:-true}
+      WEBUI_AUTH_COOKIE_SECURE: ${WEBUI_AUTH_COOKIE_SECURE:-true}
+      WEBUI_SESSION_COOKIE_SAME_SITE: ${WEBUI_SESSION_COOKIE_SAME_SITE:-lax}
+      WEBUI_AUTH_COOKIE_SAME_SITE: ${WEBUI_AUTH_COOKIE_SAME_SITE:-lax}
+
+      EXTERNAL_PWA_MANIFEST_URL: ${EXTERNAL_PWA_MANIFEST_URL:-https://shaheen-group.mooo.com/manifest.json}
+
+      SHAHEEN_AI_NAME: ${SHAHEEN_AI_NAME:-SHAHEEN AI}
+      SHAHEEN_AI_DOMAIN: ${SHAHEEN_AI_DOMAIN:-shaheen-group.mooo.com}
+      SHAHEEN_AI_URL: ${SHAHEEN_AI_URL:-https://shaheen-group.mooo.com}
+
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
     volumes:
-      - open-webui:/app/backend/data
+      - shaheen-ai-data:/app/backend/data
 
 volumes:
-  open-webui:
-    external: true
+  shaheen-ai-data:
+    name: shaheen-ai-data

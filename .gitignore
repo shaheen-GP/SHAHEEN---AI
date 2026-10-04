@@ -311,3 +311,14 @@ cypress/videos
 cypress/screenshots
 .vscode/settings.json
 .cptr
+deployment/.env
+deployment/.env.*
+.shaheen-backups/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+!deployment/.env.shaheen.example

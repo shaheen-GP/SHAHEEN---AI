@@ -123,7 +123,7 @@
 				Do not alter, remove, obscure, or replace it except as LICENSE permits:
 				https://docs.openwebui.com/license. -->
 				<div class="text-xs text-gray-600 dark:text-gray-400">
-					{#if !$WEBUI_NAME.includes('Open WebUI')}
+					{#if !$WEBUI_NAME.includes('SHAHEEN AI')}
 						<span>{$WEBUI_NAME}</span> -
 					{/if}
 

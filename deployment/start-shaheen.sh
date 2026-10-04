@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-set -e
+set -Eeuo pipefail
+IFS=$'\n\t'
 
-cd /opt/SHAHEEN---AI
+PROJECT_ROOT="${PROJECT_ROOT:-/opt/SHAHEEN---AI}"
 
-echo "========================================"
-echo "        HACK-Y.Z.SHAHEEN AI"
-echo "========================================"
+cd "$PROJECT_ROOT"
 
-if [ -f docker-compose.yml ]; then
-    docker compose up -d --build
-elif [ -f deployment/docker-compose.shaheen.yml ]; then
-    docker compose -f deployment/docker-compose.shaheen.yml up -d --build
-else
-    echo "No Docker Compose configuration found."
-    exit 1
-fi
+export SHAHEEN_AI_NAME="${SHAHEEN_AI_NAME:-SHAHEEN AI}"
+export SHAHEEN_AI_DOMAIN="${SHAHEEN_AI_DOMAIN:-shaheen-group.mooo.com}"
+export SHAHEEN_AI_URL="${SHAHEEN_AI_URL:-https://${SHAHEEN_AI_DOMAIN}}"
+
+# Underlying Open WebUI runtime variable.
+export WEBUI_NAME="${WEBUI_NAME:-SHAHEEN AI}"
+export WEBUI_URL="${WEBUI_URL:-${SHAHEEN_AI_URL}}"
+export ENV="${ENV:-prod}"
+
+umask 027
+
+exec docker compose \
+    -f deployment/docker-compose.shaheen.yml \
+    up -d --remove-orphans
