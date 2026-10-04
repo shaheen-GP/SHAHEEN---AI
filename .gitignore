@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 x.py
 yarn.lock
 .DS_Store
@@ -322,3 +323,15 @@ deployment/.env.*
 secrets/
 .secrets/
 !deployment/.env.shaheen.example
+=======
+.env
+.env.*
+backups/
+*.tar.gz
+*.sqlite3
+*.db
+data/
+__pycache__/
+*.pyc
+.DS_Store
+>>>>>>> origin/main
