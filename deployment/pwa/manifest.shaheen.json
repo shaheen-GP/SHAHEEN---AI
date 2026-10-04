@@ -1,7 +1,7 @@
 {
   "name": "SHAHEEN AI",
   "short_name": "SHAHEEN AI",
-  "description": "SHAHEEN AI self-hosted AI platform.",
+  "description": "SHAHEEN AI",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -12,9 +12,9 @@
   "icons": [
     {
       "src": "/branding/shaheen-ai.png",
-      "sizes": "800x800",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
