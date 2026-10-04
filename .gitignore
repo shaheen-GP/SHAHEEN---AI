@@ -1,0 +1,10 @@
+.env
+.env.*
+backups/
+*.tar.gz
+*.sqlite3
+*.db
+data/
+__pycache__/
+*.pyc
+.DS_Store
