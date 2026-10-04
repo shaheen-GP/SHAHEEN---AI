@@ -379,10 +379,10 @@
 
 			<div class="px-5 pt-2 pb-5">
 				<div class="text-sm text-gray-500 dark:text-gray-400">
-					<!-- LICENSE covers this Open WebUI Community wordmark.
+					<!-- LICENSE covers this SHAHEEN AI Community wordmark.
 					Do not alter, remove, obscure, or replace it except as LICENSE permits:
 					https://docs.openwebui.com/license. -->
-					{$i18n.t('Do you want to sync your usage stats with Open WebUI Community?')}
+					{$i18n.t('Do you want to sync your usage stats with SHAHEEN AI Community?')}
 				</div>
 
 				<div class="mt-2 text-xs text-gray-500">
@@ -390,7 +390,7 @@
 					Do not alter, remove, obscure, or replace it except as LICENSE permits:
 					https://docs.openwebui.com/license. -->
 					{$i18n.t(
-						'Participate in community leaderboards and evaluations! Syncing aggregated usage stats helps drive research and improvements to Open WebUI. Your privacy is paramount: no message content is ever shared.'
+						'Participate in community leaderboards and evaluations! Syncing aggregated usage stats helps drive research and improvements to SHAHEEN AI. Your privacy is paramount: no message content is ever shared.'
 					)}
 				</div>
 
